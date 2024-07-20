@@ -1,0 +1,37 @@
+<html>
+<head>
+    <title>VC Counter App by Jyoti Jha</title>
+    <style>
+        * { font-size: 3vw; font-family: 'Ink Free'; }
+        body { background: linen; }
+        textarea { resize: none; }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function check() {
+            let txt = document.getElementById("txt");
+            let msg = document.getElementById("msg");
+            if (txt.value === "") {
+                alert("txt is empty");
+                msg.innerHTML = "";
+                txt.focus();
+                return false;
+            } else {
+                return true;
+            }
+        }
+    </script>
+</head>
+<body>
+    <center>
+        <h1>VC Counter App</h1>
+        <form method="POST" onsubmit="return check()">
+            {% csrf_token %}
+            <textarea placeholder="enter text" name="txt" rows="4" cols="40" id="txt">{{ txt }}</textarea>
+            <br/><br/>
+            <input type="submit" value="Count Vowels and Consonants"/>
+        </form>
+        <h2 id="msg">{{ msg }}</h2>
+    </center>
+</body>
+</html>
