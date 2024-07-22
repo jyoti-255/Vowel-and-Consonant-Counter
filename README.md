@@ -7,3 +7,6 @@ This Django application allows users to enter a text and get the count of vowels
 - 📝 Enter a text string.
 - 🔢 Calculate the number of vowels and consonants.
 - 📊 Display the result.
+
+## You can check it out
+https://vowelconsonantcounter.pythonanywhere.com/
